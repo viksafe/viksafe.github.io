@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="viksafe">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://viksafe.com//images/bg.png">
+    <meta property="twitter:image" content="https://viksafe.com//images/bg.png" />
+    
+
+    
+    <meta name="title" content="Buying your data" />
+    <meta property="og:title" content="Buying your data" />
+    <meta property="twitter:title" content="Buying your data" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Buying your data-</title>
+
+    <link rel="canonical" href="/post/2021/07/26/buying-your-data/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">viksafe</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/bg.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Buying your data</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                viksafe
+                         
+                        on 
+                        Monday, July 26, 2021
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#the-story">The story</a></li>
+    <li><a href="#closing">Closing</a></li>
+  </ul>
+</nav>
+                
+                <h2 id="background">Background</h2>
+<p>When doing internal penetration tests or Active Directory assessments
+you will at one time or another obtain password hashes for accounts that
+require brute-force attacks or wordlist attacks to gain the plaintext passwords.</p>
+<p>When in this situation, publicly leaked password databases can come in handy to get a sense
+of the password complexity and common passwords used by a company. Searching for the
+domain name of the company will give a glimpse of the password schema for the leaked accounts.
+Cit0day breach, rockyou.txt
+or &ldquo;Collection1&rdquo; are a couple of the most commonly used leaked databases.
+These databases are most often .txt files with the content &ldquo;<a href="mailto:test@example.tld">test@example.tld</a>:Password123&rdquo;.
+After obtaining a couple of the breaches the file size may well exceed 1 TB and your first
+option will be to put the data on a mechanical hard drive. When you come to the conclusion that searching
+through the content on said mechanical hard drive takes 72 hours, you go for step two.</p>
+<p>Enter Fusion-io. The great company behind the product ioDrive - which sole purpose is to serve you
+extremely low read and write latency and blazingly high I/O. Fusion-io was founded back in 2005 and their drives
+were mostly used by enterprises which required high performant server storage. And these drives
+came with a price tag,
+a high one. Fusion-io was later overtaken by SSD drives and now NVMe as their retail price became lower,
+and cheaper to produce.
+Fusion-io went on a turbulent trip, where they were sold to SanDisk, which later was acquired by Western Digital
+while meantime, partnership with HP, Dell and Supermicro allowed the companies to sell brand their own
+version of the high performant drive.
+This may be the reason why support sources and documentation for these drives are a bit&hellip; complicated.</p>
+<p>However, ioDrives are sold on eBay for instance, at a reasonable price. 200 USD for 1.65 TB and four
+weeks later I had mine installed and ready to crunch password databases.</p>
+<h2 id="the-story">The story</h2>
+<p>As a starting note: Always format storage devices before you sell them. Even better, don&rsquo;t sell them - destroy them.</p>
+<p>When attempting to mount the drive I observed a file system.
+
+  <img src="/images/01_fdisk.png" alt="01_fdisk">
+
+
+VMFS or Virtual Machine File System is a very familiar file system to me. This is commonly used to store
+virtual machines that run in VMware ESX hypervisors.</p>
+<p>After apt installing <code>libguestfs-tools</code> to handle VMFS, mounting the file system is trivial:</p>
+<p><code>mount /dev/fioa /mnt</code></p>
+<p>And to my initial assumption, the storage device is not formatted.
+
+  <img src="/images/01_ls.png" alt="01_ls">
+
+</p>
+<p>Filenames such as &ldquo;Gold Image&rdquo; and &ldquo;XenDesktop&rdquo; immediately tells that this drive has been
+used for Citrix XenDesktop Virtual Desktop Infrastructure (VDI) environment, and a source image,
+&ldquo;Golden Image&rdquo;, has been used to provision the desktops.</p>
+<p>In short, a .vmdk file (also called the descriptor) is a text file that contains configuration
+information about a VM’s virtual hard drive. The *-flat.vmdk file is the virtual equivalent of a
+physical hard drive. This is where raw data is written.</p>
+<p>.vmx is the &ldquo;inventory file&rdquo; describing amount of RAM, number of CPUs, disk controller etc.</p>
+<p>To be able to mount VMDK files, affuse is needed. <code>sudo apt install affuse</code></p>
+<pre><code>$ affuse /mnt/P03\ [..REDACTED..]\ 64bit_XenDesktop-baseDisk-datastore-988/P03\ [..REDACTED..]\ 64bit_XenDesktop-baseDisk-datastore-988-flat.vmdk /tmp/vmdk
+</code></pre><p>
+  <img src="/images/01_ls_vmdk.png" alt="01_ls_vmdks.png">
+
+</p>
+<p>In order to mount raw files from within VMDK files, these steps are required:</p>
+<p>Get the sector size and start sector of the OS partition with <code>fdisk</code>. Multiply these and
+use as offset when mounting the raw file.</p>
+<p>
+  <img src="/images/01_fdisk_vmdk.png" alt="01_fdisk_vmdk">
+
+</p>
+<pre><code>$ python3 -c 'print(1640448 * 512)'
+839909376
+</code></pre><pre><code>$ mount -o ro,loop,offset=839909376 /tmp/vmdk/P03\ [..REDACTED..]\ 64bit_XenDesktop-baseDisk-datastore-988-flat.vmdk.raw ./fs
+</code></pre><p>And file system access is gained.</p>
+<p>
+  <img src="/images/01_filesys.png" alt="01_filesys">
+
+</p>
+<p>When having access to a file system like this, first route of attack is to dump
+the local SAM database. This database includes hashed passwords of all local accounts,
+encryption keys, and Domain Cached Credential hashes (DCC2) if any domain user has been logged
+in to the machine.</p>
+<p>To dump SAM, pypykatz can be used and is easily installed with pip3: <code>pip3 install pypykatz</code>.</p>
+<p>Pypykatz needs access to SAM, SECURITY and SYSTEM files that are located at <code>C:\windows\system32\config\</code>.</p>
+<ul>
+<li><strong>SAM</strong> stores the NT hashes for all local accounts, such as the local administrator</li>
+<li><strong>SECURITY</strong> stores DCC2 hashes, service account passwords and various security related information</li>
+<li><strong>SYSTEM</strong> contains the information required to decrypt SAM and SECURITY</li>
+</ul>
+<p>
+  <img src="/images/01_sam.png" alt="01_sam">
+
+</p>
+<p>The local accounts from &ldquo;SAM hive secrets&rdquo; were sent to the Hashcat box for
+cracking: <code>hashcat -m 1000 -a0 hashes.txt rockyou.txt</code>. Surprisingly, none of them cracked even with different
+combinations of wordlists and rule sets.</p>
+<p>However, as seen in the pypykatz output, a DCC2 hash is obtained. This means that a Domain User account has
+been logged into the machine. Hashcat, activate! <code>hashcat -m 2100 -a0 dcc2.txt rockyou.txt.txt --username</code> And pop! <code>&lt;DOMAIN&gt;-SVC-GROUPIT</code> account cracked.</p>
+<p>This account could be used to try and access external resources for the affected company,
+such as Exchange admin center (EAC), Outlook Web Access, Azure resources etc.
+No attempts to reuse these credentials have been attempted.</p>
+<p>With physical access to a machine, another trick is also available to login into the machine.</p>
+<ul>
+<li>Installing ESXi or VMware workstation</li>
+<li>Importing the Virtual Machine to the inventory</li>
+<li>Booting Kali Linux in forensic mode</li>
+<li>Renaming <code>C:\windows\system32\sethc.exe</code> to <code>sethc.exe.bak</code></li>
+<li>Copying <code>C:\windows\system32\cmd.exe</code> to <code>sethc.exe</code></li>
+</ul>
+<p>Now what happens is that when reaching the login screen of Windows 7, pressing Shift five times
+will bring up a shell in the context of <code>NT Authority\SYSTEM</code>.
+This is because <code>sethc.exe</code> is called when the sticky keys feature is activated by the Shift key, and
+it is called as a SYSTEM service.</p>
+<p>Executing <code>net user &lt;user&gt; RodaLacketSnus1</code> and a new password will be set for the supplied user.</p>
+<p>
+  <img src="/images/01_login.png" alt="01_login">
+
+</p>
+<p>
+  <img src="/images/01_in.png" alt="01_in">
+
+</p>
+<h2 id="closing">Closing</h2>
+<p>This Fusion-io drive&rsquo;s former owner was one of the top 10 largest financial institutions in the world.
+The accounts gained and the knowledge of internal software and system configurations
+of the Windows 7 golden images could be used
+to mount an offensive attack against the company with a much more targeted
+approach, substantially increasing the success rate.</p>
+<p>Cloud migrations rapidly increases the amount of retired storage devices for enterprises as on-prem
+hosted infrastructure ends their service. A company policy for handling retired
+equipment shall be implemented and followed with discipline, or else data leakage such as this
+may occur. Don&rsquo;t let this happen to you.</p>
+<p>The recommended way is to let a trusted company, whose core business is confidentiality
+and storage device destruction, handle the termination.
+The retired devices shall be stored in security vessels until their termination.</p>
+<p>The data on for instance storage devices will risk
+getting in the wrong hands if they are given to employees or resold on the second
+hand market.</p>
+<p>All of this information was responsibly disclosed to the affected company who
+handled the case professionally and executed internal investigations to make sure
+that the accounts leaked had no security impact on the current state of their environment.</p>
+<p>Shoutout to <a href="https://github.com/labanskoller">@LabanSkollermark</a> for proofreading.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:contact@viksafe.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/viksafe">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://linkedin.com/andreas-vikerup-5829b917">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; viksafe 2021
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

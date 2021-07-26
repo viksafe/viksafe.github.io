@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>viksafe</title>
+    <link>https://viksafe.com/</link>
+    <description>Recent content on viksafe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© viksafe 2021</copyright>
+    <lastBuildDate>Mon, 26 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://viksafe.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buying your data</title>
+      <link>https://viksafe.com/post/2021/07/26/buying-your-data/</link>
+      <pubDate>Mon, 26 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://viksafe.com/post/2021/07/26/buying-your-data/</guid>
+      <description>Background When doing internal penetration tests or Active Directory assessments you will at one time or another obtain password hashes for accounts that require brute-force attacks or wordlist attacks to gain the plaintext passwords.
+When in this situation, publicly leaked password databases can come in handy to get a sense of the password complexity and common passwords used by a company. Searching for the domain name of the company will give a glimpse of the password schema for the leaked accounts.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://viksafe.com/contact/</link>
+      <pubDate>Thu, 04 Feb 2021 06:51:40 -0500</pubDate>
+      
+      <guid>https://viksafe.com/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
